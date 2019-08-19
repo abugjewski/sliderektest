@@ -1,0 +1,43 @@
+body {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.box {
+    height: 50%;
+    width: 100%;
+}
+
+.container > div {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        height: 50vh;
+        width: 50%;
+    }
+
+    .box {
+        height: 100%;
+        width: 50%;
+    }
+
+    .container > div {
+        height: 100%;
+        width: 50%;
+    }
+}

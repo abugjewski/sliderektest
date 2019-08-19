@@ -1,0 +1,107 @@
+.slider {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slide {
+    align-items: center;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: transform 1s ease-in-out, opacity 1s linear;
+    width: 100%;
+}
+
+.slide.fromTop {
+    transform: translateY(-100%);
+}
+
+.slide.fromBottom {
+    transform: translateY(100%);
+}
+
+.slide.fromLeft {
+    transform: translateX(-100%);
+}
+
+.slide.fromRight {
+    transform: translateX(100%);
+}
+
+.slide.fromTop.active, .slide.fromBottom.active, .slide.fromLeft.active, .slide.fromRight.active {
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.slide__content {
+    align-items: center;
+    background: rgba(45, 45, 45, 0.5);
+    color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    padding: 2rem;
+    transition: transform 1s;
+    width: 50%;
+}
+
+.slide__content.fromTop {
+    transform: translateY(-200%);
+}
+
+.slide__content.fromBottom {
+    transform: translateY(200%);
+}
+
+.slide__content.fromLeft {
+    transform: translateX(-200%);
+}
+
+.slide__content.fromRight {
+    transform: translateX(200%);
+}
+
+.slide.active > .slide__content {
+    transform: translate(0,0);
+}
+
+.slide__content h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.slider__buttons {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 10;
+}
+
+.slider-button {
+    border: 1px solid #fafafa;
+    color: #fafafa;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    transition: background 1s, color 1s;
+    width: 3rem;
+}
+
+.slider-button:hover {
+    background: #fafafa;
+    color: #2d2d2d;
+}
